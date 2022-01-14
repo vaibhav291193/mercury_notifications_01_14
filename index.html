@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/notifications.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Design System - Toast Notifications</title>
+</head>
+
+<body>
+    <div class="ds-container">
+        <div class="example-container">
+
+            <h1>Notifications With Close Button</h1>
+            <!-- INFO -->
+            <button onclick="createNotification(cssType = 'notification', 
+                                         toastType = 'info', 
+                                         toastIconAria = 'Note:', 
+                                         desktopMessage = 'Information notifications provide non-essential, but helpful information. <a href=\'#\' class=\'by-keyboard\'>View more</a>', 
+                                         mobileMessage = 'The item details have been deleted.', 
+                                         closeButton = true, 
+                                         autoClose = false)">Info</button>
+
+
+            <!-- SUCCESS -->
+            <button onclick="createNotification(cssType = 'notification', 
+                                         toastType = 'success', 
+                                         toastIconAria = 'Success:', 
+                                         desktopMessage = 'Success notifications indicate that a user has successfully completed an action.', 
+                                         mobileMessage = 'Delivery preference is saved.', 
+                                         closeButton = true, 
+                                         autoClose = false)">Success</button>
+
+
+            <!-- WARNING -->
+            <button onclick="createNotification(cssType = 'notification', 
+                                         toastType = 'warning', 
+                                         toastIconAria = 'Caution:', 
+                                         desktopMessage = 'Warning notifications provide essential information to prevent users from making an error.', 
+                                         mobileMessage = 'The option to make changes is no longer available.', 
+                                         closeButton = true, 
+                                         autoClose = false)">Warning</button>
+
+
+            <!-- Error -->
+            <button onclick="createNotification(cssType = 'notification', 
+                                         toastType = 'error', 
+                                         toastIconAria = 'Error:', 
+                                         desktopMessage = 'Error notifications tell users what’s required to successfully complete the action they are trying to complete.<div class=\'inline-links\'><p><a href=\'#\' class=\'by-keyboard\'>View more</a></p><p><a href=\'#\' class=\'by-keyboard\'>View more</a></p><p><a href=\'#\' class=\'by-keyboard\'>View more</a></p></div>', 
+                                         mobileMessage = 'Error notifications tell users what’s required to successfully complete the action they are trying to complete.<div class=\'inline-links\'><p><a href=\'#\' class=\'by-keyboard\'>View more</a></p><p><a href=\'#\' class=\'by-keyboard\'>View more</a></p><p><a href=\'#\' class=\'by-keyboard\'>View more</a></p></div>', 
+                                         closeButton = false, 
+                                         autoClose = false)">Error</button>
+
+
+
+            <h1>Notifications Without Out Close Button</h1>
+            <!-- INFO -->
+            <button onclick="createNotification(cssType = 'notification', 
+                                         toastType = 'info', 
+                                         toastIconAria = 'Note:', 
+                                         desktopMessage = 'Information notifications provide non-essential, but helpful information. <a href=\'#\' class=\'by-keyboard\'>View more</a>', 
+                                         mobileMessage = 'The item details have been deleted.', 
+                                         closeButton = false, 
+                                         autoClose = false)">Info</button>
+
+
+            <!-- SUCCESS -->
+            <button onclick="createNotification(cssType = 'notification', 
+                                         toastType = 'success', 
+                                         toastIconAria = 'Success:', 
+                                         desktopMessage = 'Success notifications indicate that a user has successfully completed an action.', 
+                                         mobileMessage = 'Delivery preference is saved.', 
+                                         closeButton = false, 
+                                         autoClose = false)">Success</button>
+
+
+            <!-- WARNING -->
+            <button onclick="createNotification(cssType = 'notification', 
+                                         toastType = 'warning', 
+                                         toastIconAria = 'Caution:', 
+                                         desktopMessage = 'Warning notifications provide essential information to prevent users from making an error.', 
+                                         mobileMessage = 'The option to make changes is no longer available.', 
+                                         closeButton = false, 
+                                         autoClose = false)">Warning</button>
+
+
+            <!-- Error -->
+            <button onclick="createNotification(cssType = 'notification', 
+                                         toastType = 'error', 
+                                         toastIconAria = 'Error:', 
+                                         desktopMessage = 'Error notifications tell users what’s required to successfully complete the action they are trying to complete.</p><div class=\'inline-links\'><p><a href=\'#\' class=\'by-keyboard\'>View more</a></p><p><a href=\'#\' class=\'by-keyboard\'>View more</a></p><p><a href=\'#\' class=\'by-keyboard\'>View more</a></p></div>', 
+                                         mobileMessage = 'Error notifications tell users what’s required to successfully complete the action they are trying to complete.</p><div class=\'inline-links\'><p><a href=\'#\' class=\'by-keyboard\'>View more</a></p><p><a href=\'#\' class=\'by-keyboard\'>View more</a></p><p><a href=\'#\' class=\'by-keyboard\'>View more</a></p></div>', 
+                                         closeButton = false, 
+                                         autoClose = false)">Error</button>
+
+
+            <h1>Toast Notifications</h1>
+            <!-- SUCCESS -->
+            <button onclick="createNotification(cssType = 'toast', 
+                                         toastType = 'success', 
+                                         toastIconAria = 'Success:', 
+                                         desktopMessage = 'Delivery preference is saved.', 
+                                         mobileMessage = 'Delivery preference is saved.', 
+                                         closeButton = true, 
+                                         autoClose = true)">Success</button>
+
+            <!-- Error -->
+            <button onclick="createNotification(cssType = 'toast', 
+                                         toastType = 'error', 
+                                         toastIconAria = 'Error:', 
+                                         desktopMessage = 'Error notifications tell users what’s required to successfully complete the action they are trying to complete.', 
+                                         mobileMessage = 'Error notifications tell users what’s required to successfully complete the action they are trying to complete.', 
+                                         closeButton = true, 
+                                         autoClose = false)">Error</button>
+
+            <div id="notificationContainer"></div>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque accumsan non dui feugiat tincidunt. Suspendisse blandit interdum nisi, non laoreet metus gravida pellentesque. Aenean tellus lorem, egestas ullamcorper scelerisque ut, egestas eleifend neque. Quisque eleifend turpis quis erat dignissim, ut tempus quam fringilla. Sed facilisis lectus ac nunc feugiat, tincidunt eleifend orci aliquet. Sed vehicula elit sed molestie eleifend. Sed tempor posuere tortor id consequat. Morbi ullamcorper molestie nunc, at maximus ex posuere eu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin ante neque, cursus in elementum porttitor, viverra sed lacus.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque accumsan non dui feugiat tincidunt. Suspendisse blandit interdum nisi, non laoreet metus gravida pellentesque. Aenean tellus lorem, egestas ullamcorper scelerisque ut, egestas eleifend neque. Quisque eleifend turpis quis erat dignissim, ut tempus quam fringilla. Sed facilisis lectus ac nunc feugiat, tincidunt eleifend orci aliquet. Sed vehicula elit sed molestie eleifend. Sed tempor posuere tortor id consequat. Morbi ullamcorper molestie nunc, at maximus ex posuere eu. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin ante neque, cursus in elementum porttitor, viverra sed lacus.</p>
+
+            <div id="toastsContainer"></div>
+
+        </div>
+
+    </div>
+</body>
+<script src="js/notifications.js"></script>
+
+</html>

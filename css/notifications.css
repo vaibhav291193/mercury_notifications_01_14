@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+.ds-container {
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 20px;
+  background-color: #fff;
+}
+.example-container {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+h1 {
+  font-family: Roboto;
+  font-size: 24px;
+}
+
+/* 
+Do not delete the following comment. It is essential for tracking purposes.
+#Merc2021DoNotDelete
+*/
+
+/* Notification/Toast */
+
+.notification {
+    z-index: 1;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    color: #333333;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+
+    /* Transition effects on screen */
+    padding: 0px;
+    opacity: 1;
+    transition: all 0.5s ease-out;
+    transition-property: padding, opacity;
+}
+.hide{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-left: 0px;
+  box-shadow: none;
+  opacity: 0;
+}
+
+#toastsContainer {
+    position: absolute;
+    z-index: 1;
+    width: 368px;
+    right: 24px;
+    top: 0px;
+}
+
+
+#toastsContainer .notification{
+  z-index: 1;
+  padding: 24px 24px 24px 72px;
+  margin-bottom: 0px;
+  opacity: 1;
+  
+  position: absolute;
+  top: -200px;
+  transition: all 0.5s ease-out;
+  transition-property: top, position, opacity, margin, padding; 
+}
+#toastsContainer .notification.close{
+  padding: 24px 56px 24px 72px;
+  margin-bottom: 0px;
+  opacity: 1;
+  
+  
+  position: absolute;
+  top: -200px;
+  transition: all 0.5s ease-out;  
+  transition-property: top, position, opacity, margin, padding;
+}
+
+#toastsContainer .notification.animation,
+#toastsContainer .notification.close.animation{
+  top: 24px;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+#toastsContainer .notification.animation.hide,
+#toastsContainer .notification.close.animation.hide,
+#toastsContainer .notification.animation.notificationHide,
+#toastsContainer .notification.close.animation.notificationHide{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-left: 0px;
+  box-shadow: none;
+  opacity: 0 !important;
+  margin-bottom: 0px !important;
+  transition: all 0.5s ease-out;
+}
+
+#toastsContainer .notification.shadow{
+  -webkit-box-shadow: 0px 3px 8px 0px rgba(17,17,17,0.13); 
+    box-shadow: 0px 3px 8px 0px rgba(17,17,17,0.13);
+}
+
+/* A11ly removed moving effects if disabled by browser or window settings */
+@media (prefers-reduced-motion: reduce) {
+  #toastsContainer .notification.animation.hide,
+  #toastsContainer .notification.close.animation.hide,
+  #toastsContainer .notification.animation.notificationHide,
+  #toastsContainer .notification.close.animation.notificationHide,
+  #toastsContainer .notification.animation,
+  #toastsContainer .notification.close.animation {
+    transition: none;
+  }
+}
+
+/* Notifications */
+#notificationContainer {
+    position: relative;
+}
+#notificationContainer .notification{
+  padding: 24px 24px 24px 72px;
+}
+#notificationContainer .notification.close{
+  padding: 24px 56px 24px 72px;
+}
+
+/* Icon */
+.icon {
+  float: left;
+  position: absolute;
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+}
+#toastsContainer .icon,
+#notificationContainer .icon {
+  left: 24px;
+}
+
+.info-icon {
+  background-image: url(../img/icons/info.svg);
+}
+.success-icon {
+  background-image: url(../img/icons/success.svg);
+}
+.error-icon {
+  background-image: url(../img/icons/error.svg);
+}
+.warning-icon {
+  background-image: url(../img/icons/warning.svg);
+}
+
+
+.info {
+  background-color: #e5eff9;
+  border-left: 4px solid #0467c6;
+}
+.success {
+  background-color: #e6f3e5;
+  border-left: 4px solid #098a00;
+}
+.warning {
+  background-color: #ffefc0;
+  border-left: 4px solid #e26515;
+}
+.error {
+  background-color: #f9e9e8;
+  border-left: 4px solid #ca261a;
+}
+
+button.closebtn,
+.button.closebtn
+ {
+  float: right;
+  cursor: pointer;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  background-image: url("../img/icons/close.svg");
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  min-height: 16px;
+  background-color: transparent;
+  border: 0;
+  padding: 22px;
+  background-position: center;
+  cursor:auto
+}
+
+button.closebtn:hover,
+.button.closebtn:hover{
+  cursor: pointer;
+}
+
+.desktop{
+  display: block;
+}
+.mobile{
+  display: none;
+}
+.notification p {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+/* Error with links */
+
+.error p.desktop,
+.error p.mobile
+{
+  margin-top: 0px !important;
+}
+
+.error p + p,
+.notification.error .text .inline-links{
+  margin-top: 24px !important;
+}
+
+.notification.error .text .inline-links p{
+  margin-top: 16px !important;
+}
+
+.notification.error .text .inline-links + p{
+  margin-top: 24px !important;
+}
+
+@media only screen and (max-width: 40em) {
+  #toastsContainer {
+    position: fixed;
+    bottom: 0px;
+    top: unset;
+    z-index: 1;
+    width: 85%;
+    right: unset;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+
+  #toastsContainer .notification,
+  #toastsContainer .notification.close{
+    position: relative;
+    top: unset;
+    bottom: -200px;
+    transition: all 0.5s ease-out;
+    transition-property: bottom, position, opacity; 
+    z-index: 1;
+  }
+  
+
+  #toastsContainer .notification.animation,
+  #toastsContainer .notification.close.animation{
+    top: unset;
+    bottom: 0px;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 16px;
+  }
+  
+
+  
+  .closebtn {
+    visibility: visible;
+  }
+
+  #toastsContainer .notification,
+  #notificationContainer .notification {
+    padding: 16px 16px 16px 56px;
+  }
+  
+  #toastsContainer .notification.close,
+  #notificationContainer .notification.close{
+    padding: 16px 54px 16px 56px;
+  }
+
+  #toastsContainer .icon,
+  #notificationContainer .icon{
+    left: 16px;
+  }
+  #notificationContainer .closebtn {
+    visibility: visible;
+  }
+
+  .desktop{
+    display: none;
+  }
+  .mobile{
+    display: block;
+  }
+}
+
+/* Links */
+/* Links Class */
+a, a[role="button"] {
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #0467c6;
+  text-decoration: none;
+  position: relative;
+  border-radius: 1px;
+}
+
+a:hover, a[role="button"]:hover{
+  text-decoration: underline;
+}
+a:focus, a[role="button"]:focus {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px #0467c6;
+  text-decoration: underline;
+  outline: none;  
+}
+
+a.by-keyboard:focus, a[role="button"].by-keyboard:focus {
+  box-shadow: 0 0 0 0px #fff, 0 0 0 0px #0467c6 !important;
+}
+
+.text a,
+p a {
+  text-decoration: underline;
+  font-size: inherit;
+}
+
+
+
+/* Micro Buttons */
+.micro-buttons{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  color: #0467c6;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 1px;
+  vertical-align: middle;
+}
+
+.micro-buttons:hover{
+  text-decoration: underline;
+}
+
+.micro-buttons:focus {
+  box-shadow: 0 0 0 1px #fff, 0 0 0 2px #0467c6;
+  text-decoration: underline;
+  outline: none;  
+}
+
+.micro-buttons.by-keyboard:focus {
+  box-shadow: 0 0 0 0px #fff, 0 0 0 0px #0467c6 !important;
+}
